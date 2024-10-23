@@ -57,7 +57,8 @@ jooq {
 			}
 
 			target {
-				packageName = "org.example.db"
+				packageName = "jp.quotest.quocdt.db"
+				directory = "src/main/kotlin"
 			}
 		}
 	}
