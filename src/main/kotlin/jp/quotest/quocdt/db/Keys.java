@@ -7,11 +7,9 @@ package jp.quotest.quocdt.db;
 import jp.quotest.quocdt.db.tables.Authors;
 import jp.quotest.quocdt.db.tables.BookAuthors;
 import jp.quotest.quocdt.db.tables.Books;
-import jp.quotest.quocdt.db.tables.FlywaySchemaHistory;
 import jp.quotest.quocdt.db.tables.records.AuthorsRecord;
 import jp.quotest.quocdt.db.tables.records.BookAuthorsRecord;
 import jp.quotest.quocdt.db.tables.records.BooksRecord;
-import jp.quotest.quocdt.db.tables.records.FlywaySchemaHistoryRecord;
 
 import org.jooq.ForeignKey;
 import org.jooq.TableField;
@@ -35,7 +33,6 @@ public class Keys {
     public static final UniqueKey<BookAuthorsRecord> BOOK_AUTHORS_BOOK_ID_AUTHOR_ID_KEY = Internal.createUniqueKey(BookAuthors.BOOK_AUTHORS, DSL.name("book_authors_book_id_author_id_key"), new TableField[] { BookAuthors.BOOK_AUTHORS.BOOK_ID, BookAuthors.BOOK_AUTHORS.AUTHOR_ID }, true);
     public static final UniqueKey<BookAuthorsRecord> BOOK_AUTHORS_PKEY = Internal.createUniqueKey(BookAuthors.BOOK_AUTHORS, DSL.name("book_authors_pkey"), new TableField[] { BookAuthors.BOOK_AUTHORS.ID }, true);
     public static final UniqueKey<BooksRecord> BOOKS_PKEY = Internal.createUniqueKey(Books.BOOKS, DSL.name("books_pkey"), new TableField[] { Books.BOOKS.ID }, true);
-    public static final UniqueKey<FlywaySchemaHistoryRecord> FLYWAY_SCHEMA_HISTORY_PK = Internal.createUniqueKey(FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY, DSL.name("flyway_schema_history_pk"), new TableField[] { FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY.INSTALLED_RANK }, true);
 
     // -------------------------------------------------------------------------
     // FOREIGN KEY definitions

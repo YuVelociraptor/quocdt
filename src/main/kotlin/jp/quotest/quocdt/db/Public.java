@@ -10,7 +10,6 @@ import java.util.List;
 import jp.quotest.quocdt.db.tables.Authors;
 import jp.quotest.quocdt.db.tables.BookAuthors;
 import jp.quotest.quocdt.db.tables.Books;
-import jp.quotest.quocdt.db.tables.FlywaySchemaHistory;
 
 import org.jooq.Catalog;
 import org.jooq.Table;
@@ -46,11 +45,6 @@ public class Public extends SchemaImpl {
     public final Books BOOKS = Books.BOOKS;
 
     /**
-     * The table <code>public.flyway_schema_history</code>.
-     */
-    public final FlywaySchemaHistory FLYWAY_SCHEMA_HISTORY = FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY;
-
-    /**
      * No further instances allowed
      */
     private Public() {
@@ -68,8 +62,7 @@ public class Public extends SchemaImpl {
         return Arrays.asList(
             Authors.AUTHORS,
             BookAuthors.BOOK_AUTHORS,
-            Books.BOOKS,
-            FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY
+            Books.BOOKS
         );
     }
 }

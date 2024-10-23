@@ -7,7 +7,6 @@ package jp.quotest.quocdt.db;
 import jp.quotest.quocdt.db.tables.Authors;
 import jp.quotest.quocdt.db.tables.BookAuthors;
 import jp.quotest.quocdt.db.tables.Books;
-import jp.quotest.quocdt.db.tables.FlywaySchemaHistory;
 
 
 /**
@@ -30,9 +29,4 @@ public class Tables {
      * The table <code>public.books</code>.
      */
     public static final Books BOOKS = Books.BOOKS;
-
-    /**
-     * The table <code>public.flyway_schema_history</code>.
-     */
-    public static final FlywaySchemaHistory FLYWAY_SCHEMA_HISTORY = FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY;
 }
