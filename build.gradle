@@ -59,7 +59,7 @@ jooq {
 
 			target {
 				packageName = "jp.quotest.quocdt.db"
-				directory = "src/main/kotlin"
+				directory = "src/main/generated"
 			}
 		}
 	}
@@ -76,4 +76,12 @@ kotlin {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+sourceSets {
+	main {
+		java {
+			srcDir 'src/main/generated'
+		}
+	}
 }
