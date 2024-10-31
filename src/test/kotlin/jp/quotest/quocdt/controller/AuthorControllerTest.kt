@@ -2,16 +2,17 @@ package jp.quotest.quocdt.controller
 
 import jp.quotest.quocdt.db.tables.records.AuthorsRecord
 import jp.quotest.quocdt.service.AuthorService
+import org.junit.jupiter.api.Test
+import org.mockito.Mockito.`when`
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.boot.test.mock.mockito.MockBean
-import org.springframework.test.web.servlet.MockMvc
-import org.junit.jupiter.api.Test
-import java.time.LocalDate
-import org.mockito.Mockito.`when`
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
 import org.springframework.http.MediaType
+import org.springframework.test.web.servlet.MockMvc
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
+import java.time.LocalDate
 
 @WebMvcTest(AuthorController::class)
 class AuthorControllerTest {
@@ -45,12 +46,20 @@ class AuthorControllerTest {
     @Test
     fun `createAuthor should return success message`() {
         // モック動作の定義
-        `when`(authorService.createAuthor("New Author", LocalDate.of(1990, 1, 1))).thenReturn( AuthorsRecord(1, "New Author", LocalDate.of(1990, 1, 1)))
+        `when`(authorService.createAuthor("New Author", LocalDate.of(1990, 1, 1))).thenReturn(
+            AuthorsRecord(
+                1,
+                "New Author",
+                LocalDate.of(1990, 1, 1)
+            )
+        )
 
         // テスト実行
-        mockMvc.perform(post("/api/author/create")
-            .param("name", "New Author")
-            .param("birthday", "1990-01-01"))
+        mockMvc.perform(
+            post("/api/author/create")
+                .param("name", "New Author")
+                .param("birthday", "1990-01-01")
+        )
             .andExpect(status().isOk)
             .andExpect(content().string("Create author success"))
     }
@@ -61,9 +70,11 @@ class AuthorControllerTest {
         `when`(authorService.createAuthor("Failed Author", LocalDate.of(2000, 12, 31))).thenReturn(null)
 
         // テスト実行
-        mockMvc.perform(post("/api/author/create")
-            .param("name", "Failed Author")
-            .param("birthday", "2000-12-31"))
+        mockMvc.perform(
+            post("/api/author/create")
+                .param("name", "Failed Author")
+                .param("birthday", "2000-12-31")
+        )
             .andExpect(status().isOk)
             .andExpect(content().string("Create author failed"))
     }

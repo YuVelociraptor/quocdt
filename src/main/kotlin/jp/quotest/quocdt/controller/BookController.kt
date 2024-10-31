@@ -21,11 +21,11 @@ class BookController(private val bookService: BookService) {
         @RequestParam("authorIds") authorIds: List<Int>
     ): String {
 
-        if(price < 0) {
+        if (price < 0) {
             return "Error: Price must be greater than 0."
         }
 
-        if(authorIds.size < 1) {
+        if (authorIds.size < 1) {
             return "Error: Book must have at least 1 author."
 
         }
@@ -49,11 +49,11 @@ class BookController(private val bookService: BookService) {
         val ps = publicationStatus ?: book.publicationStatus
         val a = authorIds ?: book.authors.map { it.id }
 
-        if(p < 0) {
+        if (p < 0) {
             return "Error: Price must be greater than 0."
         }
 
-        if(a.size < 1) {
+        if (a.size < 1) {
             return "Error: Book must have at least 1 author."
 
         }

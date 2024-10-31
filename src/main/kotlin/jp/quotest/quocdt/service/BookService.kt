@@ -40,7 +40,12 @@ class BookService(private val dsl: DSLContext) {
         }
     }
 
-    fun createBookWithAuthors(title: String, price: Long, publicationStatus: Boolean, authorIds: List<Int>): BooksRecord? {
+    fun createBookWithAuthors(
+        title: String,
+        price: Long,
+        publicationStatus: Boolean,
+        authorIds: List<Int>
+    ): BooksRecord? {
         return try {
             dsl.transactionResult { config ->
                 val ctx = DSL.using(config)  // `DSL.using`でコンテキストを取得
@@ -69,7 +74,13 @@ class BookService(private val dsl: DSLContext) {
         }
     }
 
-    fun updateBookWithAuthors(id: Int, title: String, price: Long, publicationStatus: Boolean, authorIds: List<Int>): BooksRecord? {
+    fun updateBookWithAuthors(
+        id: Int,
+        title: String,
+        price: Long,
+        publicationStatus: Boolean,
+        authorIds: List<Int>
+    ): BooksRecord? {
         return try {
             dsl.transactionResult { config ->
                 val ctx = DSL.using(config)

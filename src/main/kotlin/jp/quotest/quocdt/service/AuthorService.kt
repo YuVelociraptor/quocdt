@@ -26,7 +26,7 @@ class AuthorService(private val dsl: DSLContext) {
                 .set(Authors.AUTHORS.BIRTH_DATE, birthday)
                 .returning()
                 .fetchOne()
-        }catch (e: Exception) {
+        } catch (e: Exception) {
             // Error Log
             null
         }
@@ -40,7 +40,7 @@ class AuthorService(private val dsl: DSLContext) {
                 .where(Authors.AUTHORS.ID.eq(id))
                 .returning()
                 .fetchOne()
-        }catch (e: Exception) {
+        } catch (e: Exception) {
             // Error Log
             null
         }

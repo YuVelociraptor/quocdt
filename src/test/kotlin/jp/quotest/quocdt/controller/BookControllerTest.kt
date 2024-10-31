@@ -3,14 +3,15 @@ package jp.quotest.quocdt.controller
 import jp.quotest.quocdt.db.tables.records.BooksRecord
 import jp.quotest.quocdt.response.BookWithAuthorsResponse
 import jp.quotest.quocdt.service.BookService
+import org.junit.jupiter.api.Test
+import org.mockito.Mockito.`when`
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.boot.test.mock.mockito.MockBean
 import org.springframework.test.web.servlet.MockMvc
-import org.junit.jupiter.api.Test
-import org.mockito.Mockito.`when`
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers.content
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
 @WebMvcTest(BookController::class)
 class BookControllerTest {
