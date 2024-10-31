@@ -2,11 +2,7 @@ package jp.quotest.quocdt.controller
 
 import jp.quotest.quocdt.response.AuthorResponse
 import jp.quotest.quocdt.service.AuthorService
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import java.time.LocalDate
 
 @RestController

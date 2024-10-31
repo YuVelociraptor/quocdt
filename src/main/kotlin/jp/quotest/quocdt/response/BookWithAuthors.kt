@@ -1,8 +1,6 @@
 package jp.quotest.quocdt.response
 
-import java.math.BigDecimal
-
-data class BookWithAuthorsResponse (
+data class BookWithAuthorsResponse(
     val id: Int,
     val title: String,
     val price: Long,
